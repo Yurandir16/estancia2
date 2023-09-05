@@ -1,0 +1,23 @@
+{
+  "name": "estancia2",
+  "productName":"Product Electron App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^26.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
+    "electron-packager": "^17.1.1"
+  }
+}

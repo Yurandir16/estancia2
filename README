@@ -1,0 +1,6 @@
+instala las dependencias para ejecutar el programa:
+    -npm install
+
+para convertir a un aplicativo de escritorio el aplicativo web ejecuta el siguiente comando:
+    -npm run package-win
+    -se te creara una carpate y dentro de ella toda la aplicacion lista para usar

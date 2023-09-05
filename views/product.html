@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styless.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Agrega los productos que quieras</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <button class="btn btn-warning" data-toggle="modal" data-target="#addProductModal">Agregar Producto</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row" id="productContainer">
+    </div>
+  </div>
+
+  <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addProductModalLabel">Agregar Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="productForm">
+            <div class="form-group">
+              <label for="productName">Nombre</label>
+              <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="form-group">
+              <label for="productDescription">Descripción</label>
+              <textarea class="form-control" id="productDescription" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="productPrice">Precio</label>
+              <input type="number" class="form-control" id="productPrice" step="0.01" required>
+            </div>
+            <div class="form-group">
+              <label for="productImage">Imagen</label>
+              <input type="file" class="form-control-file" id="productImage" accept="image/*">
+            </div>
+            <button type="submit" class="btn btn-warning">Agregar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="updateProductModal" tabindex="-1" role="dialog" aria-labelledby="updateProductModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateProductModalLabel">Actualizar Producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="updateProductForm">
+            <div class="form-group">
+              <label for="updateProductName">Nombre</label>
+              <input type="text" class="form-control" id="updateProductName" required>
+            </div>
+            <div class="form-group">
+              <label for="updateProductDescription">Descripción</label>
+              <textarea class="form-control" id="updateProductDescription" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="updateProductPrice">Precio</label>
+              <input type="number" class="form-control" id="updateProductPrice" step="0.01" required>
+            </div>
+            <div class="form-group">
+              <label for="updateProductImage">Imagen</label>
+              <input type="file" class="form-control-file" id="updateProductImage" accept="image/*">
+            </div>
+            <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog"
+    aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirmación de Eliminación</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro de que quieres eliminarlo?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger" id="deleteConfirmationYesBtn">Sí, eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="controllerProduct.js">
+  </script>
+</body>
+
+</html>
