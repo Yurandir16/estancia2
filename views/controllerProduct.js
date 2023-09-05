@@ -140,6 +140,10 @@ function showNotificationUpdate() {
   });
 }
 
+document.getElementById("exitConfirmationYesBtn").addEventListener("click", function () {
+  window.location.href = "login.html";
+});
+
 document.getElementById("exitButton").addEventListener("click", function () {
   $("#exitConfirmationModal").modal("show");
 });

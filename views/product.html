@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="styless.css">
+  <link rel="stylesheet" href="styless2.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Hello, world!</title>
 </head>
@@ -14,6 +14,8 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
+      <a href="#  " class="btn btn-dark mr-2" id="exitButton">Exit</a>
+
       <a class="navbar-brand" href="#">Agrega los productos que quieras</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,7 +106,28 @@
       </div>
     </div>
   </div>
-  
+
+  <div class="modal fade" id="exitConfirmationModal" tabindex="-1" role="dialog"
+    aria-labelledby="exitConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exitConfirmationModalLabel">Confirmación de Salida</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro de que quieres salir?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary" id="exitConfirmationYesBtn">Sí, salir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog"
     aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
